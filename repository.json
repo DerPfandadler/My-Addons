@@ -5,11 +5,11 @@
   "addons": [
     {
       "name": "Filestash with OnlyOffice",
-      "slug": "filestash_onlyoffice",
+      "slug": "Filestash",
       "description": "Filestash file manager with integrated OnlyOffice Document Server",
       "version": "1.0",
       "arch": ["armv7", "armhf", "aarch64", "amd64", "i386"],
-      "url": "https://github.com/DerPfandadler/My-Addons/tree/main/Filestas",
+      "url": "https://github.com/DerPfandadler/My-Addons/tree/main/Filestash",
       "startup": "services",
       "boot": "auto",
       "options": {},

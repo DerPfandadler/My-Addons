@@ -19,7 +19,7 @@ Welcome to my Home Assistant Add-ons repository! This repository contains custom
 1. In Home Assistant, navigate to **Settings > Add-ons > Add-on Store**.
 2. Click the three-dot menu in the top-right corner and select **Repositories**.
 3. Add the following URL:
-   - [https://github.com/yourusername/home-assistant-addons](https://github.com/yourusername/home-assistant-addons)
+   - [https://github.com/derpfandadler/my-addons](https://github.com/derpfandadler/my-addons)
 
 4. Click **Add** and return to the Add-on Store. You should now see the custom add-ons listed under this repository.
 
