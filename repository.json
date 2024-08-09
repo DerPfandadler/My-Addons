@@ -1,15 +1,16 @@
 {
-  "name": "My Addons",
+  "name": "My Custom Addons",
   "url": "https://github.com/DerPfandadler/My-Addons",
-  "maintainer": "DerPfandadler@users.noreply.github.com",
+  "type": "addon",
+  "maintainer": "DerPfandadler",
   "addons": [
     {
-      "name": "Filestash with OnlyOffice",
-      "slug": "Filestash",
+      "name": "Filestash",
+      "slug": "filestash",
       "description": "Filestash file manager with integrated OnlyOffice Document Server",
       "version": "1.0",
       "arch": ["armv7", "armhf", "aarch64", "amd64", "i386"],
-      "url": "https://github.com/DerPfandadler/My-Addons/tree/main/Filestash",
+      "url": "https://github.com/DerPfandadler/My-Addons/filestash",
       "startup": "services",
       "boot": "auto",
       "options": {},
