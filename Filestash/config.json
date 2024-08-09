@@ -1,7 +1,7 @@
 {
     "name": "Filestash with OnlyOffice",
     "version": "1.0",
-    "slug": "filestash_onlyoffice",
+    "slug": "filestash",
     "description": "Filestash file manager with integrated OnlyOffice Document Server",
     "arch": ["armv7", "armhf", "aarch64", "amd64", "i386"],
     "startup": "services",
