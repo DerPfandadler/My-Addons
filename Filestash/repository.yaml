@@ -1,6 +1,6 @@
 name: "My Custom Addons"
-url: "https://github.com/yourusername/home-assistant-addons"
-maintainer: "Your Name"
+url: "https://github.com/DerPfandadler/My-Addons"
+maintainer: "DerPfandadler"
 addons:
   - name: "Filestash with OnlyOffice"
     slug: "filestash_onlyoffice"
@@ -12,7 +12,7 @@ addons:
       - "aarch64"
       - "amd64"
       - "i386"
-    url: "https://github.com/yourusername/home-assistant-addons/filestash_onlyoffice"
+    url: "https://github.com/DerPfandadler/My-Addons/tree/main/Filestash"
     startup: "services"
     boot: "auto"
     options: {}

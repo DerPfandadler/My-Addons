@@ -53,11 +53,3 @@ Welcome to my Home Assistant Add-ons repository! This repository contains custom
 ## Updating the Addon
 
 To update the addon, simply update this repository with any changes, and Home Assistant will prompt you to update the addon from the Add-on Store.
-
-## Contributing
-
-Feel free to contribute to this repository by submitting pull requests or opening issues. Your contributions are always welcome!
-
-## License
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
