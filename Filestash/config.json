@@ -1,0 +1,45 @@
+{
+    "name": "Filestash with OnlyOffice",
+    "version": "1.0",
+    "slug": "filestash_onlyoffice",
+    "description": "Filestash file manager with integrated OnlyOffice Document Server",
+    "arch": ["armv7", "armhf", "aarch64", "amd64", "i386"],
+    "startup": "services",
+    "boot": "auto",
+    "options": {
+      "port": 8334,
+      "application_url": "",
+      "gdrive_client_id": "",
+      "gdrive_client_secret": "",
+      "dropbox_client_id": "",
+      "onlyoffice_url": "http://localhost:8088"
+    },
+    "schema": {
+      "port": "int",
+      "application_url": "str",
+      "gdrive_client_id": "str",
+      "gdrive_client_secret": "str",
+      "dropbox_client_id": "str",
+      "onlyoffice_url": "str"
+    },
+    "ports": {
+      "8334/tcp": 8334,
+      "8088/tcp": 8088
+    },
+    "map": [
+      {
+        "volume": "filestash_data",
+        "mount": "/app/data/state"
+      }
+    ],
+    "environment": {
+      "APPLICATION_URL": "[application_url]",
+      "GDRIVE_CLIENT_ID": "[gdrive_client_id]",
+      "GDRIVE_CLIENT_SECRET": "[gdrive_client_secret]",
+      "DROPBOX_CLIENT_ID": "[dropbox_client_id]",
+      "ONLYOFFICE_URL": "[onlyoffice_url]"
+    },
+    "webui": "http://[HOST]:[PORT:8334]",
+    "ingress": false,
+    "host_network": false
+  }  

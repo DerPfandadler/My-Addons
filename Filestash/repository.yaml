@@ -1,0 +1,19 @@
+name: "My Custom Addons"
+url: "https://github.com/yourusername/home-assistant-addons"
+maintainer: "Your Name"
+addons:
+  - name: "Filestash with OnlyOffice"
+    slug: "filestash_onlyoffice"
+    description: "Filestash file manager with integrated OnlyOffice Document Server"
+    version: "1.0"
+    arch:
+      - "armv7"
+      - "armhf"
+      - "aarch64"
+      - "amd64"
+      - "i386"
+    url: "https://github.com/yourusername/home-assistant-addons/filestash_onlyoffice"
+    startup: "services"
+    boot: "auto"
+    options: {}
+    schema: {}
