@@ -44,4 +44,4 @@ environment:
   GDRIVE_CLIENT_ID: ''
   GDRIVE_CLIENT_SECRET: ''
   DROPBOX_CLIENT_ID: ''
-webui: http://[HOST]:[PORT]
+webui: http://[HOST]:[PORT:8334]
