@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y \
 # Copy Filestash binary from build stage
 COPY --from=build_filestash /app/filestash /usr/local/bin/filestash
 
-# Expose ports
+# Expose default ports (these can be overridden by user configuration)
 EXPOSE 8334 8088
 
 # Copy the run.sh script
