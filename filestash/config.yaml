@@ -23,8 +23,8 @@ schema:
   gdrive_client_secret: str
   dropbox_client_id: str
 environment:
-  APPLICATION_URL: "!secret application_url"
-  GDRIVE_CLIENT_ID: "!secret gdrive_client_id"
-  GDRIVE_CLIENT_SECRET: "!secret gdrive_client_secret"
-  DROPBOX_CLIENT_ID: "!secret dropbox_client_id"
+  APPLICATION_URL: '{application_url}'
+  GDRIVE_CLIENT_ID: '{gdrive_client_id}'
+  GDRIVE_CLIENT_SECRET: '{gdrive_client_secret}'
+  DROPBOX_CLIENT_ID: '{dropbox_client_id}'
 webui: http://[HOST]:[PORT:8334]
