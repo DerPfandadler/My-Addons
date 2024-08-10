@@ -1,5 +1,5 @@
 name: Filestash
-version: "1.0"
+version: "dev"
 slug: filestash
 description: "Filestash file manager with integrated OnlyOffice Document Server"
 url: https://github.com/DerPfandadler/filestash
@@ -7,40 +7,3 @@ arch:
   - aarch64
   - amd64
   - armv7
-startup: "services"
-boot: "auto"
-ports:
-  - port: 8334/tcp
-    description: "Port for Filestash web interface"
-  - port: 8088/tcp
-    description: "Port for OnlyOffice Document Server"
-map:
-  - config:rw
-  - ssl:rw
-  - addons:rw
-  - backup:rw
-  - share:rw
-  - filestash_data:/app/data/state
-environment:
-  - name: APPLICATION_URL
-    value: ""
-  - name: GDRIVE_CLIENT_ID
-    value: ""
-  - name: GDRIVE_CLIENT_SECRET
-    value: ""
-  - name: DROPBOX_CLIENT_ID
-    value: ""
-  - name: ONLYOFFICE_URL
-    value: "http://localhost:8088"
-webui: "http://[HOST]:[PORT:8334]"
-host_network: false
-ingress: false
-ingress_port: 8099
-ingress_entry: "http://[HOST]:[PORT:8099]"
-init: false
-hassio_api: true
-hassio_role: "default"
-homeassistant_api: true
-privileged: []
-apparmor: true
-timeout: 60
