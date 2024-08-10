@@ -8,26 +8,23 @@ arch:
 startup: services
 boot: auto
 ports:
-  '8334/tcp': 8334  # Default port mapping
+  '8334/tcp': 8334
 map:
   - config:rw
   - ssl
 options:
-  application_url: 'http://homeassistant.local:8334'  # Default value for the application URL
-  gdrive_client_id: ''  # Default empty value for Google Drive client ID
-  gdrive_client_secret: ''  # Default empty value for Google Drive client secret
-  dropbox_client_id: ''  # Default empty value for Dropbox client ID
-  service_port: 8334  # Default port for the service
+  application_url: 'http://homeassistant.local:8334'
+  gdrive_client_id: ''
+  gdrive_client_secret: ''
+  dropbox_client_id: ''
 schema:
-  application_url: str  # Define as string
-  gdrive_client_id: str  # Define as string
-  gdrive_client_secret: str  # Define as string
-  dropbox_client_id: str  # Define as string
-  service_port: int  # Define as integer
+  application_url: str
+  gdrive_client_id: str
+  gdrive_client_secret: str
+  dropbox_client_id: str
 environment:
-  APPLICATION_URL: '{{ application_url }}'  # Pass the UI-configured URL
-  GDRIVE_CLIENT_ID: '{{ gdrive_client_id }}'  # Pass the UI-configured Google Drive client ID
-  GDRIVE_CLIENT_SECRET: '{{ gdrive_client_secret }}'  # Pass the UI-configured Google Drive client secret
-  DROPBOX_CLIENT_ID: '{{ dropbox_client_id }}'  # Pass the UI-configured Dropbox client ID
-  SERVICE_PORT: '{{ service_port }}'  # Pass the UI-configured service port
-webui: http://[HOST]:[PORT:8334]  # Static default port for the web UI
+  APPLICATION_URL: "!secret application_url"
+  GDRIVE_CLIENT_ID: "!secret gdrive_client_id"
+  GDRIVE_CLIENT_SECRET: "!secret gdrive_client_secret"
+  DROPBOX_CLIENT_ID: "!secret dropbox_client_id"
+webui: http://[HOST]:[PORT:8334]
