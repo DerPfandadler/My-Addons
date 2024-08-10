@@ -12,4 +12,8 @@ ports:
 map:
   - config:rw
   - ssl
-webui: http://filestash.[HOST]:[PORT:8334]
+webui: http://[HOST]:[PORT:8334]
+
+# Remove full device access if not required
+devices: []
+full_access: false
