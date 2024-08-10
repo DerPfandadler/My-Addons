@@ -35,12 +35,9 @@ schema:
     required: false
     description: "Dropbox Client ID"
 environment:
-  - name: APPLICATION_URL
-    value: '{application_url}'
-  - name: GDRIVE_CLIENT_ID
-    value: '{gdrive_client_id}'
-  - name: GDRIVE_CLIENT_SECRET
-    value: '{gdrive_client_secret}'
-  - name: DROPBOX_CLIENT_ID
-    value: '{dropbox_client_id}'
-webui: http://[HOST]:[PORT:8334]
+  APPLICATION_URL: ''
+  GDRIVE_CLIENT_ID: ''
+  GDRIVE_CLIENT_SECRET: ''
+  DROPBOX_CLIENT_ID: ''
+webui_port: 8334
+webui: http://[HOST]:[PORT]
