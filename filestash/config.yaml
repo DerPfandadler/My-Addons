@@ -14,34 +14,17 @@ map:
   - ssl
 options:
   application_url: 'http://homeassistant.local:8334'
-  webui_port: '8334'
   gdrive_client_id: ''
   gdrive_client_secret: ''
   dropbox_client_id: ''
 schema:
-  application_url:
-    type: str
-    required: true
-    description: "The base URL for accessing Filestash"
-  webui_port:
-    type: int
-    required: true
-    description: ""
-  gdrive_client_id:
-    type: str
-    required: false
-    description: "Google Drive Client ID"
-  gdrive_client_secret:
-    type: str
-    required: false
-    description: "Google Drive Client Secret"
-  dropbox_client_id:
-    type: str
-    required: false
-    description: "Dropbox Client ID"
+  application_url: str
+  gdrive_client_id: str
+  gdrive_client_secret: str
+  dropbox_client_id: str
 environment:
-  APPLICATION_URL: ''
-  GDRIVE_CLIENT_ID: ''
-  GDRIVE_CLIENT_SECRET: ''
-  DROPBOX_CLIENT_ID: ''
+  APPLICATION_URL: '{application_url}'
+  GDRIVE_CLIENT_ID: '{gdrive_client_id}'
+  GDRIVE_CLIENT_SECRET: '{gdrive_client_secret}'
+  DROPBOX_CLIENT_ID: '{dropbox_client_id}'
 webui: http://[HOST]:[PORT:8334]
