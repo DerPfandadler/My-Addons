@@ -18,13 +18,29 @@ options:
   gdrive_client_secret: ''
   dropbox_client_id: ''
 schema:
-  application_url: str
-  gdrive_client_id: str
-  gdrive_client_secret: str
-  dropbox_client_id: str
+  application_url:
+    type: str
+    required: true
+    description: "The base URL for accessing Filestash"
+  gdrive_client_id:
+    type: str
+    required: false
+    description: "Google Drive Client ID"
+  gdrive_client_secret:
+    type: str
+    required: false
+    description: "Google Drive Client Secret"
+  dropbox_client_id:
+    type: str
+    required: false
+    description: "Dropbox Client ID"
 environment:
-  APPLICATION_URL: '{application_url}'
-  GDRIVE_CLIENT_ID: '{gdrive_client_id}'
-  GDRIVE_CLIENT_SECRET: '{gdrive_client_secret}'
-  DROPBOX_CLIENT_ID: '{dropbox_client_id}'
+  - name: APPLICATION_URL
+    value: '{application_url}'
+  - name: GDRIVE_CLIENT_ID
+    value: '{gdrive_client_id}'
+  - name: GDRIVE_CLIENT_SECRET
+    value: '{gdrive_client_secret}'
+  - name: DROPBOX_CLIENT_ID
+    value: '{dropbox_client_id}'
 webui: http://[HOST]:[PORT:8334]
