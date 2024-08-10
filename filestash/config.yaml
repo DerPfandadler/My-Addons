@@ -13,7 +13,7 @@ map:
   - config:rw
   - ssl
 options:
-  application_url: 'https://homeassistant.local'
+  application_url: 'http://homeassistant.local'
   webui_port: 8334  # Default port
   gdrive_client_id: ''
   gdrive_client_secret: ''
@@ -29,4 +29,4 @@ environment:
   GDRIVE_CLIENT_ID: '{{ gdrive_client_id }}'
   GDRIVE_CLIENT_SECRET: '{{ gdrive_client_secret }}'
   DROPBOX_CLIENT_ID: '{{ dropbox_client_id }}'
-webui: https://[HOST]:[PORT:{{ webui_port }}]
+webui: http://[HOST]:[PORT:8334]
