@@ -8,17 +8,19 @@ arch:
 startup: services
 boot: auto
 ports:
-  8334/tcp: 8334
+  '8334/tcp': 8334  # Default port mapping
 map:
   - config:rw
   - ssl
 options:
   application_url: 'http://homeassistant.local'
+  webui_port: 8334  # Default port
   gdrive_client_id: ''
   gdrive_client_secret: ''
   dropbox_client_id: ''
 schema:
   application_url: str
+  webui_port: int
   gdrive_client_id: str
   gdrive_client_secret: str
   dropbox_client_id: str
@@ -27,4 +29,4 @@ environment:
   GDRIVE_CLIENT_ID: '{{ gdrive_client_id }}'
   GDRIVE_CLIENT_SECRET: '{{ gdrive_client_secret }}'
   DROPBOX_CLIENT_ID: '{{ dropbox_client_id }}'
-webui: http://[HOST]:8334
+webui: http://[HOST]:[PORT:{{ webui_port }}]
