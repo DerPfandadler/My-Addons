@@ -15,10 +15,10 @@ VOLUME /var/app/public /var/app/storage
 EXPOSE 80
 
 # Copy the run.sh script to the container
-COPY run.sh /usr/local/bin/run.sh
+COPY run.sh /run.sh
 
 # Start the application
-CMD ["/usr/local/bin/run.sh"]
+CMD ["run.sh"]
 
 
 
