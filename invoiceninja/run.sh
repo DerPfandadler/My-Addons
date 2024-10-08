@@ -13,3 +13,4 @@ export APP_URL DB_HOST DB_USERNAME DB_PASSWORD DB_DATABASE APP_KEY
 
 # Start the service (supervisord in this case)
 exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+exec /usr/local/bin/docker-php-entrypoint "$@"
