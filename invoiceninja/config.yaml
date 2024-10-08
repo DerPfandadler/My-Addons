@@ -13,11 +13,11 @@ map:
   - config:rw
   - ssl
 options:
-  application_url: 'http://homeassistant.local'
-  db_username: ''
-  db_password: ''
-  db_database: ''
-  app_key: ''
+  application_url: http://homeassistant.local
+  db_username: username
+  db_password: password
+  db_database: name
+  app_key: key
 schema:
   application_url: str
   db_username: str

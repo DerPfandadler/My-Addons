@@ -3,8 +3,8 @@ FROM invoiceninja/invoiceninja:latest
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
     APP_DEBUG=0 \
-    APP_URL='http://ninja.dev' \
-    APP_KEY=base64:GENERATE_YOUR_KEY \
+    APP_URL= \
+    APP_KEY= \
     APP_CIPHER='AES-256-CBC' \
     DB_TYPE='mysql' \
     DB_STRICT='false' \
