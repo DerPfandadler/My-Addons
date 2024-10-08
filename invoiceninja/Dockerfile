@@ -14,19 +14,11 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 80
 
-# Create the target directory
-RUN mkdir -p /usr/local/bin
-
-# Copy the run.sh script into the container
+# Copy the run.sh script to the container
 COPY run.sh /usr/local/bin/run.sh
 
-# Verify the script was copied correctly
-RUN ls -l /usr/local/bin/run.sh
-
-# Set permissions on the run.sh script
-RUN chmod +x /usr/local/bin/run.sh
-
-# Execute the script
+# Start the application
 CMD ["/usr/local/bin/run.sh"]
+
 
 
