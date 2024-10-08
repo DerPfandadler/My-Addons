@@ -19,6 +19,7 @@ COPY ./run.sh /usr/local/bin/run.sh
 
 # Override the default ENTRYPOINT
 ENTRYPOINT []
+CMD [ "./usr/local/bin/run.sh" ]
 
 
 
