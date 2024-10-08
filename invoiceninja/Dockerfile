@@ -19,7 +19,7 @@ EXPOSE 80
 # Override the default ENTRYPOINT
 ENTRYPOINT []
 
-RUN bin/sh  /usr/bin/run.sh
+RUN /bin/sh  /usr/bin/run.sh
 
 
 
