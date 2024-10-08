@@ -1,4 +1,4 @@
-FROM invoiceninja/invoiceninja:latest-arm64
+FROM invoiceninja/invoiceninja:latest
 
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
