@@ -11,6 +11,8 @@ APP_KEY=$(bashio::config 'app_key')
 # Export them as environment variables
 export APP_URL DB_HOST DB_USERNAME DB_PASSWORD DB_DATABASE APP_KEY
 
-# Start the service (supervisord in this case)
-exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+# Call the original docker-php-entrypoint to maintain its functionality
 exec /usr/local/bin/docker-php-entrypoint "$@"
+
+# Finally, start supervisord to manage services
+exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
