@@ -14,6 +14,7 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 80
 
+COPY run.sh /usr/local/bin/run.sh
 CMD ["/run.sh"]
 
 
