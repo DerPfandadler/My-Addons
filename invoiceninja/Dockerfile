@@ -15,7 +15,6 @@ VOLUME /var/app/public /var/app/storage
 EXPOSE 80
 
 COPY run.sh /usr/local/bin/run.sh
-RUN chmod +x /usr/local/bin/run.sh
 # Override the default ENTRYPOINT
 ENTRYPOINT [ "/usr/local/bin/run.sh" ]
 
