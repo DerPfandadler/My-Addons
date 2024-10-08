@@ -24,3 +24,10 @@ schema:
   db_password: str
   db_database: str
   app_key: str
+environment:
+  APP_URL: "{{ options.app_url }}"
+  DB_HOST: "{{ options.db_host }}"
+  DB_USERNAME: "{{ options.db_username }}"
+  DB_PASSWORD: "{{ options.db_password }}"
+  DB_DATABASE: "{{ options.db_database }}"
+  APP_KEY: "{{ options.app_key }}"
