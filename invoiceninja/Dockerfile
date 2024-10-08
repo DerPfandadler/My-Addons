@@ -1,5 +1,7 @@
 FROM invoiceninja/invoiceninja:latest
 
+RUN apk add --no-cache yq
+
 COPY run.sh /usr/bin/run.sh
 
 # Set environment variables for database and app configuration
@@ -18,7 +20,7 @@ EXPOSE 80
 
 # Override the default ENTRYPOINT
 ENTRYPOINT []
-RUN /bin/sh  /usr/bin/run.sh
+CMD ["/bin/sh", "/usr/bin/run.sh"]
 
 
 
