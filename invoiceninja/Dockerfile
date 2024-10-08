@@ -1,7 +1,7 @@
 FROM invoiceninja/invoiceninja:latest
 
 # Copy the run.sh script to the container
-COPY run.sh /usr/local/bin/run.sh
+COPY /usr/local/bin/run.sh /
 CMD ["/usr/local/bin/run.sh"]
 
 # Set environment variables for database and app configuration
