@@ -1,6 +1,9 @@
-#!/usr/bin/with-contenv bashio
+##!/bin/bash
 
-# Log that the script has started
+# Load the Bashio library
+source /usr/lib/bashio/bashio.sh
+
+# Use bashio functions as needed
 bashio::log.info "Starting run.sh script..."
 
 # Fetch config values from Home Assistant
