@@ -14,7 +14,11 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 80
 
+# Copy the run.sh script
 COPY run.sh /usr/local/bin/run.sh
+
+# Override the default ENTRYPOINT
+ENTRYPOINT ["/usr/local/bin/run.sh"]
 
 
 
