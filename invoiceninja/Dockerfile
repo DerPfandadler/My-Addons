@@ -1,7 +1,5 @@
 FROM invoiceninja/invoiceninja:latest
 
-RUN apk add --no-cache yq
-
 COPY run.sh /usr/bin/run.sh
 
 # Set environment variables for database and app configuration
