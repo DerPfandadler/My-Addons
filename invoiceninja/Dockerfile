@@ -16,6 +16,7 @@ EXPOSE 80
 
 # Copy the run.sh script
 COPY run.sh /usr/local/bin/run.sh
+RUN chmod +x /usr/local/bin/run.sh
 
 # Override the default ENTRYPOINT
 ENTRYPOINT ["/usr/local/bin/run.sh"]
