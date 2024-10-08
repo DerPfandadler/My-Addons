@@ -2,7 +2,7 @@ name: Filestash
 version: dev
 slug: filestash
 description: Filestash file manager
-url: https://github.com/DerPfandadler/filestash
+url: https://github.com/DerPfandadler/My-Addons/tree/main/filestash
 arch:
   - aarch64
 startup: services
