@@ -1,32 +1,20 @@
-title: "Invoice Ninja"
-config:
+---
+configuration:
   app_url:
-    name: "Application URL"
-    description: "The base URL where Invoice Ninja will be accessible. Leave empty to use the default."
+    name: Application URL
+    description: The base URL where Invoice Ninja will be accessible. Leave empty to use the default.
   db_host:
-    name: "Database Host"
-    description: "The hostname or IP address of the MariaDB database used by Invoice Ninja."
+    name: Database Host
+    description: The hostname or IP address of the MariaDB database used by Invoice Ninja.
   db_username:
-    name: "Database Username"
-    description: "The username for the MariaDB database used by Invoice Ninja."
+    name: Database Username
+    description: The username for the MariaDB database used by Invoice Ninja.
   db_password:
-    name: "Database Password"
-    description: "The password for the MariaDB database used by Invoice Ninja."
+    name: Database Password
+    description: The password for the MariaDB database used by Invoice Ninja.
   db_database:
-    name: "Database Name"
-    description: "The name of the database for Invoice Ninja."
+    name: Database Name
+    description: The name of the database for Invoice Ninja.
   app_key:
-    name: "Application Key (Base64)"
-    description: |
-      The base64-encoded encryption key for securing Invoice Ninja. You must generate and provide this key. 
-      Run the following command to generate it:
-      ```
-      docker run --rm -it invoiceninja/invoiceninja php artisan key:generate --show
-      ```
-      For more information on APP_KEY and its importance, check out this resource: [App Key Guide](https://tighten.com/insights/app-key-and-you/)
-
-description: |
-  Invoice Ninja is a self-hosted billing and invoicing platform that integrates seamlessly with Home Assistant.
-
-long_description: |
-  Invoice Ninja is a powerful billing and invoicing platform designed to help businesses manage payments, invoices, and clients. With seamless integration into Home Assistant, you can self-host your entire invoicing system and customize the experience as needed.
+    name: Application Key (Base64)
+    description: The base64-encoded encryption key for securing Invoice Ninja. You must generate and provide this key.

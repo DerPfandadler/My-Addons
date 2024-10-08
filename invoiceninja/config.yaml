@@ -8,7 +8,7 @@ arch:
 startup: services
 boot: auto
 ports:
-  80/tcp: 8000
+  80/tcp: 8151
 map:
   - config:rw
   - ssl
@@ -20,14 +20,7 @@ options:
   app_key: ''
 schema:
   application_url: str
-  db_host: str
   db_username: str
   db_password: str
   db_database: str
   app_key: str
-environment:
-  APPLICATION_URL: '{{ options.app_url }}'
-  DB_USERNAME: '{{ options.db_username }}'
-  DB_PASSWORD: '{{ options.db_password }}'
-  DB_DATABASE: '{{ options.db_database }}'
-  APP_KEY: '{{ options.app_key }}'
