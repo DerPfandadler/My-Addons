@@ -15,8 +15,10 @@ VOLUME /var/app/public /var/app/storage
 EXPOSE 80
 
 # Copy the run.sh script to the container
+RUN mkdir -p /usr/local/bin
 COPY run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
+
 
 # Use the run.sh script as entrypoint
 CMD ["/usr/local/bin/run.sh"]
