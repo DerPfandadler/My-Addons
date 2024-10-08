@@ -19,7 +19,8 @@ EXPOSE 80
 
 COPY scripts/ /
 # Override the default ENTRYPOINT
-ENTRYPOINT [ "/run.sh" ]
+ENTRYPOINT []
+CMD [ "/run.sh" ]
 
 
 
