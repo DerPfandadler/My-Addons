@@ -14,7 +14,7 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 80
 
-RUN install -m 755 run.sh /usr/bin/run.sh
+RUN install -m 755 run.sh ./run.sh
 
 # Override the default ENTRYPOINT
 ENTRYPOINT []
