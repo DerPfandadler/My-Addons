@@ -1,9 +1,5 @@
 FROM invoiceninja/invoiceninja:latest
 
-# Copy the run.sh script to the container
-COPY /usr/local/bin/run.sh /
-CMD ["/usr/local/bin/run.sh"]
-
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
     APP_DEBUG=0 \
@@ -17,6 +13,8 @@ VOLUME /var/app/public /var/app/storage
 
 # Expose port for web access
 EXPOSE 80
+
+CMD ["/usr/local/bin/run.sh"]
 
 
 
