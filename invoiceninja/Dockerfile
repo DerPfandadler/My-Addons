@@ -17,10 +17,11 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 80
 
-COPY myass /
+COPY scripts/run.sh /
+RUN chmod +x run.sh
 # Override the default ENTRYPOINT
 ENTRYPOINT []
-CMD [ "scripts/run.sh" ]
+CMD [ "/run.sh" ]
 
 
 
