@@ -2,7 +2,7 @@ name: Invoice Ninja
 version: dev
 slug: invoiceninja
 description: Invoice Ninja Addon for Home Assistant
-url: https://github.com/DerPfandadler/invoiceninja
+url: https://github.com/DerPfandadler/My-Addons/tree/main/invoiceninja
 arch:
   - aarch64
 startup: services
