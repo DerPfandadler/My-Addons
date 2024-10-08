@@ -17,9 +17,6 @@ EXPOSE 80
 # Copy the run.sh script to the container
 COPY run.sh /usr/local/bin/run.sh
 
-# Start the application
-CMD ["/usr/local/bin/run.sh"]
-
 
 
 
