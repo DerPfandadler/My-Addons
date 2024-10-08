@@ -1,5 +1,8 @@
 FROM invoiceninja/invoiceninja:latest
 
+ARG CACHEBUST=1
+RUN echo "Cache busting: $CACHEBUST"
+
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
     APP_DEBUG=0 \
