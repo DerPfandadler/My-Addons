@@ -9,9 +9,9 @@ ENV APP_ENV='production' \
     DB_TYPE='mysql' \
     DB_STRICT='false' \
     DB_HOST=core-mariadb \
-    DB_DATABASE=ninja \
-    DB_USERNAME=ninja \
-    DB_PASSWORD=ninja
+    DB_DATABASE= \
+    DB_USERNAME= \
+    DB_PASSWORD=
 
 # Ensure persistent volumes for public and storage directories
 VOLUME /var/app/public /var/app/storage
