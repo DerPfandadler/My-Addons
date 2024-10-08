@@ -2,6 +2,9 @@ FROM invoiceninja/invoiceninja:latest
 
 COPY run.sh /usr/bin/run.sh
 
+RUN apk add --no-cache bash bashio
+
+
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
     APP_DEBUG=0 \
@@ -18,7 +21,6 @@ EXPOSE 80
 
 # Override the default ENTRYPOINT
 ENTRYPOINT []
-
 RUN /bin/sh  /usr/bin/run.sh
 
 
