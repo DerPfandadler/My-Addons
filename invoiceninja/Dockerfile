@@ -2,6 +2,7 @@ FROM invoiceninja/invoiceninja:latest
 
 COPY /usr/bin/run.sh /
 COPY config.yaml /
+COPY supervisord.conf /v5/supervisor/supervisord.conf
 
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
