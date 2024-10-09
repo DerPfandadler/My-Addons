@@ -17,9 +17,8 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 80
 
-# Override the default ENTRYPOINT
-#ENTRYPOINT []
-#CMD ["/bin/sh", "/usr/bin/run.sh"]
+
+CMD ["/bin/sh", "/usr/bin/run.sh"]
 
 
 
