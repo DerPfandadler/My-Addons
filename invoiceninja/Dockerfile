@@ -18,7 +18,9 @@ VOLUME /var/app/public /var/app/storage
 EXPOSE 8151
 
 
-CMD ["/bin/sh", "/usr/bin/run.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-php-entrypoint"]
+CMD ["/usr/bin/run.sh"]
+
 
 
 
