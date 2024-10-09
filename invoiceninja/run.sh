@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Parse the values from the config.yaml file, ignoring the "str" schema definition
-APP_URL=$(grep '^app_url:' /usr/bin/config.yaml | sed 's/.*app_url: //')
-DB_USERNAME=$(grep '^db_username:' /usr/bin/config.yaml | sed 's/.*db_username: //')
-DB_PASSWORD=$(grep '^db_password:' /usr/bin/config.yaml | sed 's/.*db_password: //')
-DB_DATABASE=$(grep '^db_database:' /usr/bin/config.yaml | sed 's/.*db_database: //')
-APP_KEY=$(grep '^app_key:' /usr/bin/config.yaml | sed 's/.*app_key: //')
+# Parse the values from the config.yaml file, allowing for optional leading spaces
+APP_URL=$(grep -E '^\s*app_url:' /usr/bin/config.yaml | sed 's/.*app_url: //')
+DB_USERNAME=$(grep -E '^\s*db_username:' /usr/bin/config.yaml | sed 's/.*db_username: //')
+DB_PASSWORD=$(grep -E '^\s*db_password:' /usr/bin/config.yaml | sed 's/.*db_password: //')
+DB_DATABASE=$(grep -E '^\s*db_database:' /usr/bin/config.yaml | sed 's/.*db_database: //')
+APP_KEY=$(grep -E '^\s*app_key:' /usr/bin/config.yaml | sed 's/.*app_key: //')
 
 # Export the parsed values as environment variables
 export APP_URL DB_USERNAME DB_PASSWORD DB_DATABASE APP_KEY
