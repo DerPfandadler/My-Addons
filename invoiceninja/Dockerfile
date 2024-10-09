@@ -2,7 +2,7 @@ FROM invoiceninja/invoiceninja:latest
 
 COPY /usr/bin/run.sh /
 COPY config.yaml /
-COPY supervisord.conf alpine/5/rootfs/etc/supervisord.conf
+COPY supervisord.conf /etc/supervisord.conf
 
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
