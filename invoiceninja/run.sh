@@ -17,4 +17,4 @@ echo "DB_PASSWORD=${DB_PASSWORD}"
 echo "DB_DATABASE=${DB_DATABASE}"
 echo "APP_KEY=${APP_KEY}"
 
-exec /usr/local/bin/docker-php-entrypoint "$@"
+/usr/local/bin/docker-php-entrypoint "$@"
