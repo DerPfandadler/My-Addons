@@ -17,4 +17,4 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 8151
 
-ENTRYPOINT ["docker-php-entrypoint"]
+ENTRYPOINT ["/bin/sh", "/usr/bin/run.sh", "&&", "supervisord"]
