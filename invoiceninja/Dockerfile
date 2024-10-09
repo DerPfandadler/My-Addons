@@ -17,4 +17,4 @@ VOLUME /var/app/public /var/app/storage
 # Expose port for web access
 EXPOSE 8151
 
-ENTRYPOINT ["/bin/sh", "/usr/bin/run.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "/usr/bin/run.sh"]
