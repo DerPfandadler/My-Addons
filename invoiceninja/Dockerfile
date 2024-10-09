@@ -19,7 +19,7 @@ EXPOSE 8151
 
 
 ENTRYPOINT ["/usr/local/bin/docker-php-entrypoint"]
-CMD ["/usr/bin/run.sh"]
+CMD ["run.sh"]
 
 
 
