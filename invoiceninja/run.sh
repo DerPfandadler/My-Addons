@@ -16,3 +16,5 @@ echo "DB_USERNAME=${DB_USERNAME}"
 echo "DB_PASSWORD=${DB_PASSWORD}"
 echo "DB_DATABASE=${DB_DATABASE}"
 echo "APP_KEY=${APP_KEY}"
+
+exec php-fpm

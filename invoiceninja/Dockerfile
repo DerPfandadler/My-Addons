@@ -15,7 +15,7 @@ ENV APP_ENV='production' \
 VOLUME /var/app/public /var/app/storage
 
 # Expose port for web access
-EXPOSE 80
+EXPOSE 8151
 
 
 CMD ["/bin/sh", "/usr/bin/run.sh"]
