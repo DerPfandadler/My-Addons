@@ -2,7 +2,7 @@ FROM invoiceninja/invoiceninja:latest
 
 COPY run.sh /usr/bin/run.sh
 COPY config.yaml /usr/bin/config.yaml
-CMD ["/usr/bin/run.sh"]
+RUN "/usr/bin/run.sh"
 
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
@@ -17,5 +17,3 @@ VOLUME /var/app/public /var/app/storage
 
 # Expose port for web access
 EXPOSE 8151
-
-ENTRYPOINT ["/usr/local/bin/docker-php-entrypoint"]
