@@ -18,8 +18,8 @@ VOLUME /var/app/public /var/app/storage
 EXPOSE 80
 
 # Override the default ENTRYPOINT
-ENTRYPOINT []
-CMD ["/bin/sh", "/usr/bin/run.sh"]
+#ENTRYPOINT []
+#CMD ["/bin/sh", "/usr/bin/run.sh"]
 
 
 
