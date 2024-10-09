@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Parse config.yaml for environment variables
-APP_URL=$(grep 'app_url' config.yaml | sed 's/.*app_url: //')
-DB_USERNAME=$(grep 'db_username' config.yaml | sed 's/.*db_username: //')
-DB_PASSWORD=$(grep 'db_password' config.yaml | sed 's/.*db_password: //')
-DB_DATABASE=$(grep 'db_database' config.yaml | sed 's/.*db_database: //')
-APP_KEY=$(grep 'app_key' config.yaml | sed 's/.*app_key: //')
+APP_URL=$(grep 'app_url' /usr/bin/config.yaml | sed 's/.*app_url: //')
+DB_USERNAME=$(grep 'db_username' /usr/bin/config.yaml | sed 's/.*db_username: //')
+DB_PASSWORD=$(grep 'db_password' /usr/bin/config.yaml | sed 's/.*db_password: //')
+DB_DATABASE=$(grep 'db_database' /usr/bin/config.yaml | sed 's/.*db_database: //')
+APP_KEY=$(grep 'app_key' /usr/bin/config.yaml | sed 's/.*app_key: //')
 
 # Export the parsed values as environment variables
 export APP_URL DB_USERNAME DB_PASSWORD DB_DATABASE APP_KEY

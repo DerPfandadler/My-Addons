@@ -1,7 +1,7 @@
 FROM invoiceninja/invoiceninja:latest
 
 COPY run.sh /usr/bin/run.sh
-COPY config.yaml /config.yaml
+COPY config.yaml /usr/bin/config.yaml
 
 # Set environment variables for database and app configuration
 ENV APP_ENV='production' \
