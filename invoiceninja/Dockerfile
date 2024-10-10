@@ -7,7 +7,7 @@ FROM invoiceninja/invoiceninja:latest as invoiceninja
 ARG TEMPIO_VERSION BUILD_ARCH
 RUN \
     curl -sSLf -o /usr/bin/tempio \
-    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
+    "https://github.com/home-assistant/tempio/releases/download/2021.09.0/tempio_aarch64"
 
 VOLUME /var/app/public /var/app/storage
 
