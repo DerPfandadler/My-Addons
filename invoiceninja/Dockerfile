@@ -1,20 +1,15 @@
-FROM invoiceninja/invoiceninja:latest
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+FROM ghcr.io/home-assistant/aarch64-base:3.15 as base
 
-COPY /usr/bin/run.sh /
-COPY config.yaml /
+FROM invoiceninja/invoiceninja:latest as invoiceninja
 
-RUN /bin/sh /usr/bin/run.sh
+# Execute during the build of the image
+ARG TEMPIO_VERSION BUILD_ARCH
+RUN \
+    curl -sSLf -o /usr/bin/tempio \
+    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
-# Set environment variables for database and app configuration
-ENV APP_ENV='production' \
-    APP_DEBUG=0 \
-    APP_CIPHER='AES-256-CBC' \
-    DB_TYPE='mysql' \
-    DB_STRICT='false' \
-    DB_HOST=core-mariadb
-
-# Ensure persistent volumes for public and storage directories
 VOLUME /var/app/public /var/app/storage
 
-# Expose port for web access
-EXPOSE 8003
+# Copy root filesystem
+COPY rootfs /
