@@ -6,3 +6,4 @@ FROM invoiceninja/invoiceninja:latest as invoiceninja
 VOLUME /var/app/public /var/app/storage
 
 # Copy root filesystem
+COPY rootfs /
