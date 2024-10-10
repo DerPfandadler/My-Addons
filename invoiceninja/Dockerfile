@@ -7,3 +7,5 @@ VOLUME /var/app/public /var/app/storage
 
 # Copy root filesystem
 COPY rootfs /
+
+ENTRYPOINT []
