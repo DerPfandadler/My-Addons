@@ -1,4 +1,0 @@
-#!/usr/bin/execlineb -P
-with-contenv
-s6-setuidgid root
-docker-entrypoint # This runs the original entrypoint logic
