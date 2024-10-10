@@ -8,4 +8,4 @@ VOLUME /var/app/public /var/app/storage
 # Copy root filesystem
 COPY rootfs /
 
-ENTRYPOINT []
+ENTRYPOINT ["etc/s6-overlay/s6-rc.d/run"]
