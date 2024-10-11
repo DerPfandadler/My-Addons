@@ -45,3 +45,10 @@ echo "Environment setup finished." 2>&1 | tee -a /var/log/script.log
 
 # Call the original entry point or command
 bashio::log.info "Starting the main service..."
+
+echo "Starting nginx and PHP-FPM services..."
+service nginx start
+service php-fpm start
+
+# Keep the script running to avoid container exit
+tail -f /var/log/nginx/access.log /var/log/nginx/error.log

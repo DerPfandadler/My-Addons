@@ -1,5 +1,5 @@
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-FROM ghcr.io/hassio-addons/base:16.3.2
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 # Install necessary packages for running Invoice Ninja
 RUN apk add --no-cache \
@@ -18,22 +18,20 @@ RUN apk add --no-cache \
 
 VOLUME /var/app/public /var/app/storage
 
+# Set permissions for the web directory
+RUN chown -R root:root /var/www/app
+
 # Download and extract Invoice Ninja
 RUN mkdir -p /var/www/app && \
     curl -L -o invoiceninja.tar.gz "https://github.com/invoiceninja/invoiceninja/archive/refs/tags/v5.10.34.tar.gz" && \
     tar -xzvf invoiceninja.tar.gz -C /var/www/app
 
-# Set permissions for the web directory
-RUN chown -R root:root /var/www/app
+LABEL \
+  io.hass.version="VERSION" \
+  io.hass.type="addon" \
+  io.hass.arch="armhf|aarch64|i386|amd64"
 
-# Expose ports
-EXPOSE 80 443
+COPY run.sh /
+RUN chmod a+x /run.sh
 
-# Copy root filesystem
-COPY rootfs /
-
-# Set executable permission for env var script
-RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
-RUN chmod +x /etc/s6-overlay/s6-rc.d/*/up
-
-ENTRYPOINT [ "/init" ]
+CMD [ "/run.sh" ]
