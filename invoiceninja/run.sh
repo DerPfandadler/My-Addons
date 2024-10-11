@@ -1,7 +1,5 @@
 #!/command/with-contenv bashio
 
-echo "Script started" 2>&1 | tee -a /var/log/script.log
-
 # Log the start of the script
 bashio::log.info "Starting run.sh script..."
 bashio::log.info "Copying env vars..."
@@ -40,8 +38,6 @@ bashio::log.info "DB_USERNAME=${DB_USERNAME}"
 bashio::log.info "DB_DATABASE=${DB_DATABASE}"
 bashio::log.info "APP_KEY=${APP_KEY}"
 bashio::log.info "MYSQL_USER=${MYSQL_USER}"
-
-echo "Environment setup finished." 2>&1 | tee -a /var/log/script.log
 
 # Start nginx in the foreground
 bashio::log.info "Starting Nginx service..."
