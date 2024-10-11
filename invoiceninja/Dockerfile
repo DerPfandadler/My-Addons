@@ -32,6 +32,10 @@ EXPOSE 80 443
 # Copy root filesystem
 COPY rootfs /
 
+# Set executable permission for env var script
 RUN chmod +x /etc/cont-init.d/01-set-env-vars
+RUN chmod +x /etc/services.d/*/run
+
+ENV S6_LOGGING 1
 
 ENTRYPOINT ["/init"]
