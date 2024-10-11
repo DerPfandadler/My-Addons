@@ -27,9 +27,3 @@ LABEL \
   io.hass.version="VERSION" \
   io.hass.type="addon" \
   io.hass.arch="armhf|aarch64|i386|amd64"
-
-# Copy run script
-COPY rootfs /
-RUN chmod a+x /run.sh
-RUN chmod +x /etc/services.d/nginx/run /etc/services.d/nginx/log/run \
-             /etc/services.d/php-fpm/run /etc/services.d/php-fpm/log/run

@@ -38,3 +38,6 @@ bashio::log.info "DB_USERNAME=${DB_USERNAME}"
 bashio::log.info "DB_DATABASE=${DB_DATABASE}"
 bashio::log.info "APP_KEY=${APP_KEY}"
 bashio::log.info "MYSQL_USER=${MYSQL_USER}"
+
+# Ensure permissions are set correctly at runtime
+chown -R www-data:www-data /var/www/app
