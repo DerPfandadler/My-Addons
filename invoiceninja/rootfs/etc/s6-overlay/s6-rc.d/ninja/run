@@ -1,0 +1,10 @@
+#!/command/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: InvoiceNinja
+# # Start the original docker-entrypoint and supervisord under s6
+# ==============================================================================
+
+
+bashio::log.info "Starting Ninja...."
+
+exec /usr/local/bin/docker-entrypoint supervisord

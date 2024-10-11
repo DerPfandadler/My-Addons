@@ -1,8 +1,13 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.3.2
 # hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM ${BUILD_FROM} as base
 
 FROM invoiceninja/invoiceninja:latest AS invoiceninja
+
+FROM base
+
+# Copy Invoice Ninja files from the Invoice Ninja image to the Home Assistant base image
+COPY --from=invoiceninja /var/www/app /var/www/invoiceninja
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -12,8 +17,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 VOLUME /var/app/public /var/app/storage
 
-# Copy Invoice Ninja files from the Invoice Ninja image to the Home Assistant base image
-COPY --from=invoiceninja /var/www/app /var/www/invoiceninja
 # Copy root filesystem
 COPY rootfs /
 
