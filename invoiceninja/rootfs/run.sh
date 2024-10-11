@@ -39,5 +39,10 @@ bashio::log.info "DB_DATABASE=${DB_DATABASE}"
 bashio::log.info "APP_KEY=${APP_KEY}"
 bashio::log.info "MYSQL_USER=${MYSQL_USER}"
 
+# Download and extract Invoice Ninja
+RUN mkdir -p /var/www/app && \
+    curl -L -o invoiceninja.tar.gz "https://github.com/invoiceninja/invoiceninja/archive/refs/tags/v5.10.34.tar.gz" && \
+    tar -xzvf invoiceninja.tar.gz -C /var/www/app
+
 # Ensure permissions are set correctly at runtime
 chown -R www-data:www-data /var/www/app
