@@ -4,8 +4,6 @@
 # Runs the Nginx daemon
 # ==============================================================================
 
-#!/command/with-contenv bashio
-
 # Log the start of the script
 bashio::log.info "Copying env vars..."
 
