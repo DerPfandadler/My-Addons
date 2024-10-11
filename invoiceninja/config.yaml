@@ -15,61 +15,26 @@ ports:
   80/tcp: 8003
 
 options:
-  # General Settings
-  app_url: http://homeassistant.local
-  app_key: your_key
-
-  # Database Settings
-  db_host: localhost
-  db_port: 3306
-  db_database: invoiceninja
-  db_username: invoiceninja
-  db_password: 43zB3dRL6KU3vOtMlUYfACLjmIlENVSW
-
-  # Email Settings
-  in_user_email: ''
-  in_password: ''
-  mail_mailer: log
-  mail_host: smtp.mailtrap.io
-  mail_port: 2525
-  mail_username:
-  mail_password:
-  mail_encryption:
-  mail_from_address: 'user@example.com'
-  mail_from_name: 'Self Hosted User'
-
-  # MySQL Settings
-  mysql_root_password: ninjaAdm1nPassword
-  mysql_user: ninja
-  mysql_password: ninja
-  mysql_database: ninja
-
+  app_env: 'production'
+  app_debug: 0
+  app_url: 'http://ninja.dev'
+  app_key: 'your-app-key'
+  app_cipher: 'AES-256-CBC'
+  db_type: 'mysql'
+  db_strict: 'false'
+  db_host: 'localhost'
+  db_database: 'ninja'
+  db_username: 'ninja'
+  db_password: 'ninja'
 schema:
-  # General Settings
+  app_env: str
+  app_debug: int
   app_url: str
   app_key: str
-
-  # Database Settings
+  app_cipher: str
+  db_type: str
+  db_strict: str
   db_host: str
-  db_port: int
   db_database: str
   db_username: str
   db_password: str
-
-  # Email Settings
-  in_user_email: str
-  in_password: str
-  mail_mailer: str
-  mail_host: str
-  mail_port: int
-  mail_username: str
-  mail_password: str
-  mail_encryption: str
-  mail_from_address: str
-  mail_from_name: str
-
-  # MySQL Settings
-  mysql_root_password: str
-  mysql_user: str
-  mysql_password: str
-  mysql_database: str

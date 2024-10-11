@@ -2,34 +2,18 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.3.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+FROM invoiceninja/invoiceninja:latest AS invoiceninja
+
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003
 
-# Install necessary packages for running Invoice Ninja
-RUN apk add --no-cache \
-    php \
-    php-fpm \
-    php-mysqli \
-    php-gd \
-    php-json \
-    php-mbstring \
-    php-session \
-    php-xml \
-    mariadb-client \
-    nginx \
-    curl \
-    unzip
-
-# Download and extract Invoice Ninja
-RUN mkdir -p /var/www/app && \
-    curl -L -o invoiceninja.tar.gz "https://github.com/invoiceninja/invoiceninja/archive/refs/tags/v5.10.34.tar.gz" && \
-    tar -xzvf invoiceninja.tar.gz -C /var/www/app
-
 VOLUME /var/app/public /var/app/storage
 
+# Copy Invoice Ninja files from the Invoice Ninja image to the Home Assistant base image
+COPY --from=invoiceninja /var/www/app /var/www/invoiceninja
 # Copy root filesystem
 COPY rootfs /
 
