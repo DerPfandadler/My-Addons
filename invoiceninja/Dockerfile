@@ -1,6 +1,6 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.3.2
 # hadolint ignore=DL3006
-FROM ${BUILD_FROM} as base
+FROM ${BUILD_FROM} AS base
 
 FROM invoiceninja/invoiceninja:latest AS invoiceninja
 
