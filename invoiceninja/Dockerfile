@@ -38,4 +38,4 @@ RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
 
 ENV S6_LOGGING 1
 
-ENTRYPOINT ["/init"]
+WORKDIR /
