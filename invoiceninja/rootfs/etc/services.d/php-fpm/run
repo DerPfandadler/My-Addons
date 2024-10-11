@@ -1,0 +1,3 @@
+#!/bin/bash
+# Start php-fpm in the foreground
+exec php-fpm -F

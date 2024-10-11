@@ -32,7 +32,7 @@ LABEL \
   io.hass.arch="armhf|aarch64|i386|amd64"
 
 # Copy run script
-COPY run.sh /run.sh
+COPY rootfs /
 RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
+RUN chmod +x /etc/services.d/nginx/run /etc/services.d/nginx/log/run \
+             /etc/services.d/php-fpm/run /etc/services.d/php-fpm/log/run

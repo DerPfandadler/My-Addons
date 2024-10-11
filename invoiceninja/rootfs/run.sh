@@ -38,11 +38,3 @@ bashio::log.info "DB_USERNAME=${DB_USERNAME}"
 bashio::log.info "DB_DATABASE=${DB_DATABASE}"
 bashio::log.info "APP_KEY=${APP_KEY}"
 bashio::log.info "MYSQL_USER=${MYSQL_USER}"
-
-# Start nginx in the foreground
-bashio::log.info "Starting Nginx service..."
-nginx -g 'daemon off;' &  # Background this, but watch out for correct behavior
-
-# Start PHP-FPM in the foreground (this will keep the container alive)
-bashio::log.info "Starting PHP-FPM service..."
-exec php-fpm -F  # Run as PID 1, so the container stays alive
