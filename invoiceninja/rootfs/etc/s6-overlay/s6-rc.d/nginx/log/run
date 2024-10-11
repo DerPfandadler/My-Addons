@@ -1,3 +1,0 @@
-#!/bin/bash
-# Logging setup for nginx
-exec svlogd -tt /var/log/nginx

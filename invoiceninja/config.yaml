@@ -5,13 +5,14 @@ description: Invoice Ninja Addon for Home Assistant
 url: https://github.com/DerPfandadler/My-Addons/tree/main/invoiceninja
 arch:
   - aarch64
-startup: application
+  - amd64
+  - armv7
+init: false
+services:
+  - mysql:need
 hassio_api: true
 ports:
   80/tcp: 8003
-map:
-  - config:rw
-  - ssl
 
 options:
   # General Settings
