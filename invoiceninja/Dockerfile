@@ -13,7 +13,6 @@ RUN apk add --no-cache \
     php-xml \
     mariadb-client \
     nginx \
-    supervisor \
     curl \
     unzip
 
