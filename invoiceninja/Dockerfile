@@ -34,7 +34,7 @@ COPY rootfs /
 
 # Set executable permission for env var script
 RUN chmod +x /etc/cont-init.d/01-set-env-vars
-RUN chmod +x /etc/services.d/*/run
+RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
 
 ENV S6_LOGGING 1
 
