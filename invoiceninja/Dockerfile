@@ -31,10 +31,8 @@ LABEL \
   io.hass.type="addon" \
   io.hass.arch="armhf|aarch64|i386|amd64"
 
-# Copy necessary service files and run script
-COPY /etc/services.d/nginx/run /etc/services.d/nginx/run
-COPY /etc/services.d/php-fpm/run /etc/services.d/php-fpm/run
+# Copy run script
 COPY run.sh /run.sh
-RUN chmod a+x /run.sh /etc/services.d/nginx/run /etc/services.d/php-fpm/run
+RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
