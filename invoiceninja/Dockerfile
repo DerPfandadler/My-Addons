@@ -35,3 +35,5 @@ COPY rootfs /
 # Set executable permission for env var script
 RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
 RUN chmod +x /etc/s6-overlay/s6-rc.d/*/up
+
+ENTRYPOINT [ "/init" ]
