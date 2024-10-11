@@ -1,5 +1,5 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-FROM homeassistant/aarch64-base:3.15
+FROM ghcr.io/hassio-addons/base:16.3.2
 
 # Install necessary packages for running Invoice Ninja
 RUN apk add --no-cache \
@@ -34,9 +34,3 @@ COPY rootfs /
 
 # Set executable permission for env var script
 RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
-
-ENV S6_LOGGING 1
-
-WORKDIR /
-
-ENTRYPOINT [ "/init" ]
