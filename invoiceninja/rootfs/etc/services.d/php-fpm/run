@@ -1,2 +1,2 @@
-#!/usr/bin/with-contenv bashio
-exec php-fpm7 --nodaemonize
+#!/usr/bin/execlineb -P
+php-fpm -F
