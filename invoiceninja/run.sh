@@ -43,12 +43,10 @@ bashio::log.info "MYSQL_USER=${MYSQL_USER}"
 
 echo "Environment setup finished." 2>&1 | tee -a /var/log/script.log
 
-# Call the original entry point or command
-bashio::log.info "Starting the main service..."
+# Start nginx in the foreground
+bashio::log.info "Starting Nginx service..."
+nginx -g 'daemon off;' &  # Background this, but watch out for correct behavior
 
-echo "Starting nginx and PHP-FPM services..."
-service nginx start
-service php-fpm start
-
-# Keep the script running to avoid container exit
-tail -f /var/log/nginx/access.log /var/log/nginx/error.log
+# Start PHP-FPM in the foreground (this will keep the container alive)
+bashio::log.info "Starting PHP-FPM service..."
+exec php-fpm -F  # Run as PID 1, so the container stays alive
