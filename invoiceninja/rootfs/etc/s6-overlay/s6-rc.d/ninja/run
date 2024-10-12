@@ -6,6 +6,11 @@
 
 bashio::log.info "Copying env vars..."
 
+# Set environment variables
+export IS_DOCKER=true
+export APP_ENV=production
+export LOG=errorlog
+export SNAPPDF_EXECUTABLE_PATH=/usr/bin/chromium-browser
 export APP_ENV=$(bashio::config 'app_env')
 export APP_DEBUG=$(bashio::config 'app_debug')
 export APP_URL=$(bashio::config 'app_url')
