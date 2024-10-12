@@ -20,6 +20,10 @@ VOLUME /var/app/public /var/app/storage
 # Copy root filesystem
 COPY rootfs /
 
+RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
+RUN chmod +x /etc/s6-overlay/s6-rc.d/*/up
+
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
