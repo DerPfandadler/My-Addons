@@ -7,14 +7,10 @@ FROM invoiceninja/invoiceninja:latest AS invoiceninja
 # Stage 3: Final Stage (combining both images)
 FROM base
 
-# Copy Invoice Ninja files from the Invoice Ninja image to the Home Assistant base image
-# This includes the application and related files.
-COPY --from=invoiceninja /var/www/app /var/www/invoiceninja
-COPY --from=invoiceninja /var/www/invoiceninja /var/www/invoiceninja
+COPY --from=invoiceninja / / 
 
-# Copy necessary config files from Invoice Ninja
-COPY --from=invoiceninja /etc/nginx /etc/nginx
-COPY --from=invoiceninja /etc/php /etc/php
+# Set the working directory to /var/www/app
+WORKDIR /var/www/app
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
