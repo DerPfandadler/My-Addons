@@ -1,0 +1,4 @@
+2024-10-12 11:09:40 chown: unknown user/group www-data:www-data
+2024-10-12 11:09:40 s6-rc: warning: unable to start service init-env: command exited 1
+2024-10-12 11:09:40 /run/s6/basedir/scripts/rc.init: warning: s6-rc failed to properly bring all the services up! Check your logs (in /run/uncaught-logs/current if you have in-container logging) for more information.
+2024-10-12 11:09:40 /run/s6/basedir/scripts/rc.init: fatal: stopping the container.

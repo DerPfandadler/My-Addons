@@ -25,6 +25,3 @@ bashio::log.info "Database host: ${DB_HOST}"
 
 # Ensure necessary services start
 bashio::log.info "Starting services..."
-
-# Ensure permissions are set correctly at runtime
-chown -R www-data:www-data /var/www/app
