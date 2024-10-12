@@ -1,5 +1,4 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:16.3.2
-# hadolint ignore=DL3006
 FROM ${BUILD_FROM} AS base
 
 FROM invoiceninja/invoiceninja:latest AS invoiceninja
@@ -13,10 +12,13 @@ COPY --from=invoiceninja / /
 WORKDIR /var/www/app
 
 # Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+SHELL ["/bin/sh", "-c"]
 
-# Setup base
-# hadolint ignore=DL3003
+# Set environment variables (use what is already set in Invoice Ninja)
+ENV IS_DOCKER=true
+ENV APP_ENV=production
+ENV LOG=errorlog
+ENV SNAPPDF_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 VOLUME /var/app/public /var/app/storage
 

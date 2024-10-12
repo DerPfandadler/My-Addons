@@ -4,7 +4,8 @@
 # # Start the original docker-entrypoint and supervisord under s6
 # ==============================================================================
 
+# Log the values for debugging
+bashio::log.info "Starting Invoice Ninja with APP_URL=${APP_URL}"
+bashio::log.info "Database host: ${DB_HOST}"
 
-bashio::log.info "Starting Ninja...."
-
-exec /usr/local/bin/docker-entrypoint supervisord -n
+exec /usr/local/bin/docker-entrypoint -n
