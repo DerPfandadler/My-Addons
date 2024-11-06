@@ -24,7 +24,6 @@ options:
 schema:
   app_url: str
   app_key: str
-  db_host: str
   db_database: str
   db_username: str
   db_password: str
