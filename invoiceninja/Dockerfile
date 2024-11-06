@@ -14,19 +14,19 @@ WORKDIR /var/www/app
 # Set shell
 SHELL ["/bin/sh", "-c"]
 
+# Copy root filesystem
+COPY rootfs /
+
+VOLUME /var/app/public /var/app/storage
+
+RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
+RUN chmod +x /etc/s6-overlay/s6-rc.d/*/up
+
 # Set environment variables (use what is already set in Invoice Ninja)
 ENV IS_DOCKER=true
 ENV APP_ENV=production
 ENV LOG=errorlog
 ENV SNAPPDF_EXECUTABLE_PATH=/usr/bin/chromium-browser
-
-VOLUME /var/app/public /var/app/storage
-
-# Copy root filesystem
-COPY rootfs /
-
-RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run
-RUN chmod +x /etc/s6-overlay/s6-rc.d/*/up
 
 
 # Build arguments
