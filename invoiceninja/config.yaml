@@ -1,5 +1,5 @@
 name: Invoice Ninja
-version: dev14
+version: dev15
 slug: invoiceninja
 description: Invoice Ninja Addon for Home Assistant
 url: https://github.com/DerPfandadler/My-Addons/tree/main/invoiceninja
@@ -22,7 +22,7 @@ options:
   db_database: 'ninja'
   db_username: 'ninja'
   db_password: 'ninja'
-  
+
 schema:
   app_env: str
   app_debug: int
