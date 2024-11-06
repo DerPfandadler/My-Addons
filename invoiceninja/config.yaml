@@ -19,19 +19,15 @@ options:
   app_debug: 0
   app_url: 'http://ninja.dev'
   app_key: 'your-app-key'
-  app_cipher: 'AES-256-CBC'
-  db_type: 'mysql'
-  db_strict: 'false'
-  db_host: 'localhost'
   db_database: 'ninja'
   db_username: 'ninja'
   db_password: 'ninja'
+  
 schema:
   app_env: str
   app_debug: int
   app_url: str
   app_key: str
-  app_cipher: str
   db_type: str
   db_strict: str
   db_host: str
