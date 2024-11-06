@@ -12,6 +12,7 @@ services:
   - mysql:need
 hassio_api: true
 ingress: true
+ingress_stream: true
 
 options:
   app_key: ''
