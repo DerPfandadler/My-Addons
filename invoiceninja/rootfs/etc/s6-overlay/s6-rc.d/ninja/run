@@ -27,4 +27,7 @@ export DB_PASSWORD=$(bashio::config 'db_password')
 bashio::log.info "Starting Invoice Ninja with APP_URL=${APP_URL}"
 bashio::log.info "Database host: ${DB_HOST}"
 
+bashio::log.info "Listing files in /var/www/app..."
+ls -la /var/www/app
+
 exec /usr/local/bin/docker-entrypoint supervisord -n
